@@ -1,0 +1,4 @@
+sudo systemctl start mijnproject.service
+sudo systemctl stop mijnproject.service
+sudo systemctl enable mijnproject.service
+sudo systemctl disable mijnproject.service
