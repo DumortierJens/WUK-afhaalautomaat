@@ -1,2 +1,2 @@
-# WUK pickup locker
+# WUK afhaalautomaat
 My project for Project One
