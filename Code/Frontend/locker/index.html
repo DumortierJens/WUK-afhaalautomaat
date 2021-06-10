@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <title>Locker | WUK afhaalautomaat</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="msapplication-TileColor" content="#080707" />
+        <meta name="theme-color" content="#080707" />
+
+        <link rel="icon" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+
+        <link rel="stylesheet" href="../css/normalize.css" />
+        <link rel="stylesheet" href="../css/screen.css" />
+
+        <script src="https://cdn.socket.io/4.0.1/socket.io.min.js" integrity="sha384-LzhRnpGmQP+lOvWruF/lgkcqD+WDVt9fU3H4BWmwP5u5LTmkUGafMcpZKNObVMLU" crossorigin="anonymous"></script>
+        <script src="../js/datahandler.js"></script>
+        <script src="../js/app.js"></script>
+    </head>
+
+    <body class="js-page-locker">
+        <header class="o-row o-row--nav">
+            <div class="o-container">
+                <div class="c-header">
+                    <div class="c-header__logo">
+                        <h1 class="c-logo">WUK afhaalautomaat</h1>
+                    </div>
+                    <div class="c-header__nav js-nav">
+                        <nav class="c-nav">
+                            <ul class="c-nav__list">
+                                <li class="c-nav__item"><a class="c-nav__link" href="../">Dashboard</a></li>
+                                <li class="c-nav__item"><a class="c-nav__link" href="../historiek.html">Historiek</a></li>
+                                <li class="c-nav__item c-nav__item--icon">
+                                    <button type="button" class="o-button-reset c-nav__link c-nav__link--icon js-logout"><span class="material-icons-outlined">logout</span></button>
+                                </li>
+                                <li class="c-nav__item c-nav__item--icon">
+                                    <button type="button" class="o-button-reset c-nav__link c-nav__link--icon js-shutdown"><span class="material-icons-outlined">power_settings_new</span></button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="c-header__mobile-nav-toggle">
+                        <button class="o-button-reset c-nav-toggle js-nav-toggle"><span class="material-icons-outlined">menu</span></button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="o-row">
+            <div class="o-container js-locker">
+                <h2 class="c-page-header">
+                    <div class="c-page-header__group">
+                        <a class="c-page-header__icon c-page-header__icon--left" href="../"><span class="material-icons-outlined">arrow_back</span></a>
+                        <span class="js-locker-name">Locker</span>
+                    </div>
+                </h2>
+
+                <div class="o-layout o-layout--gutter">
+                    <div class="o-layout__item u-1-of-2-bp2">
+                        <button class="o-button-reset c-btn c-btn--locker-action js-show-modal-open-locker">
+                            Slot openen
+                            <span class="material-icons-outlined">arrow_forward_ios</span>
+                        </button>
+                    </div>
+                    <div class="o-layout__item u-1-of-2-bp2">
+                        <a class="c-btn c-btn--locker-action js-button-order" href="bestelling.html">
+                            Bestelling
+                            <span class="material-icons-outlined">arrow_forward_ios</span>
+                        </a>
+                    </div>
+                    <div class="o-layout__item u-1-of-2-bp2">
+                        <a class="c-btn c-btn--locker-action js-button-code" href="code-instellen.html">
+                            Code instellen
+                            <span class="material-icons-outlined">arrow_forward_ios</span>
+                        </a>
+                    </div>
+                    <div class="o-layout__item u-1-of-2-bp2">
+                        <a class="c-btn c-btn--locker-action js-button-status" href="status-instellen.html">
+                            Status instellen
+                            <span class="material-icons-outlined">arrow_forward_ios</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="o-row">
+            <div class="o-container">
+                <h3>Locker info</h3>
+                <div class="o-layout o-layout--gutter js-locker-info">
+                    <div class="c-value-box o-layout__item u-1-of-2-bp2">
+                        <div class="c-value-box__box">
+                            <p class="c-value-box__title">Slot</p>
+                            <p class="c-value-box__value js-locker-lock">...</p>
+                        </div>
+                    </div>
+                    <div class="c-value-box o-layout__item u-1-of-2-bp2">
+                        <div class="c-value-box__box">
+                            <p class="c-value-box__title">Laatst geopend</p>
+                            <p class="c-value-box__value js-locker-last-opened">...</p>
+                        </div>
+                    </div>
+                    <div class="c-value-box o-layout__item u-1-of-2-bp2">
+                        <div class="c-value-box__box">
+                            <p class="c-value-box__title">Status</p>
+                            <p class="c-value-box__value js-locker-status">...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="c-modal js-modal-open-locker">
+            <div class="c-modal__window u-max-width-sm">
+                <h2>Locker openen?</h2>
+                <p>Weet je zeker dat je de locker wil openen? <strong>Je kan de locker enkel handmatig terug sluiten!</strong></p>
+                <div class="o-layout o-layout--gutter-sm">
+                    <div class="o-layout__item u-1-of-2"><button class="o-button-reset c-btn js-cancel">Annuleren</button></div>
+                    <div class="o-layout__item u-1-of-2"><button class="o-button-reset c-btn js-ok">Openen</button></div>
+                </div>
+            </div>
+        </section>
+        <section class="c-modal js-modal-shutdown">
+            <div class="c-modal__window u-max-width-sm">
+                <h2>Locker afsluiten?</h2>
+                <p>Weet je zeker dat je de automaat wil afsluiten? <strong>Je kan de automaat enkel terug opstarten door de spanning te onderbreken!</strong></p>
+                <div class="o-layout o-layout--gutter-sm">
+                    <div class="o-layout__item u-1-of-2"><button class="o-button-reset c-btn js-cancel">Annuleren</button></div>
+                    <div class="o-layout__item u-1-of-2"><button class="o-button-reset c-btn js-ok">Afsluiten</button></div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

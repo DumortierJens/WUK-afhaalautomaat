@@ -1,0 +1,13 @@
+{
+    "name": "WUK afhaalautomaat",
+    "short_name": "WUK afhaalautomaat",
+    "icons": [
+        {
+            "src": "/google-touch-icon.png",
+            "sizes": "512x512"
+        }
+    ],
+    "theme_color": "#080707",
+    "background_color": "#080707",
+    "display": "standalone"
+}

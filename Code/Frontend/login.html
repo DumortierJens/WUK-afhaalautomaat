@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <title>Dashboard | WUK afhaalautomaat</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="msapplication-TileColor" content="#080707" />
+        <meta name="theme-color" content="#080707" />
+
+        <link rel="icon" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+
+        <link rel="stylesheet" href="css/normalize.css" />
+        <link rel="stylesheet" href="css/screen.css" />
+
+        <script src="https://cdn.socket.io/4.0.1/socket.io.min.js" integrity="sha384-LzhRnpGmQP+lOvWruF/lgkcqD+WDVt9fU3H4BWmwP5u5LTmkUGafMcpZKNObVMLU" crossorigin="anonymous"></script>
+        <script src="js/datahandler.js"></script>
+        <script src="js/app.js"></script>
+    </head>
+
+    <body class="js-page-login">
+        <header class="o-row o-row--nav">
+            <div class="o-container">
+                <div class="c-header">
+                    <div class="c-header__logo">
+                        <h1 class="c-logo">WUK afhaalautomaat</h1>
+                    </div>
+                    <div class="c-header__nav js-nav">
+                        <nav class="c-nav">
+                            <ul class="c-nav__list">
+                                <li class="c-nav__item"><a class="c-nav__link" href=".">Dashboard</a></li>
+                                <li class="c-nav__item"><a class="c-nav__link" href="historiek.html">Historiek</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="c-header__mobile-nav-toggle">
+                        <button class="o-button-reset c-nav-toggle js-nav-toggle"><span class="material-icons-outlined">menu</span></button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="o-row">
+            <div class="o-container">
+                <h2 class="c-page-header">Login</h2>
+                <div class="o-layout">
+                    <div class="o-layout__item u-1-of-2-bp4">
+                        <form class="js-form-login" method="POST">
+                            <div class="c-form__row">
+                                <label class="c-form__label" for="username">Gebruikersnaam</label>
+                                <input class="c-form__control js-username" type="text" id="username" name="username" />
+                            </div>
+                            <div class="c-form__row">
+                                <label class="c-form__label" for="password">Wachtwoord</label>
+                                <input class="c-form__control js-password" type="password" id="password" name="password" />
+                            </div>
+                            <div class="c-form__row">
+                                <button type="submit" class="o-button-reset c-form__control c-btn js-button-login">Login</button>
+                            </div>
+                            <div class="c-form__row">
+                                <p class="js-error"></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
